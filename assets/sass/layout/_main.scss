@@ -1,0 +1,117 @@
+main {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "info imagen"
+    "info imagen";
+  margin: 0;
+
+  @media (max-width: $tablet) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "imagen"
+      "info";
+  }
+}
+
+.infonews {
+  grid-area: info;
+  grid-template-rows: 60% 40%;
+  line-height: 2rem;
+}
+
+.information {
+  margin: 0;
+  margin-bottom: 1rem;
+  padding: 3rem;
+  width: 90%;
+  @media (max-width: $tablet) {
+    width: 70%;
+  }
+  @media (max-width: $phone) {
+    width: 80%;
+  }
+
+  &__title {
+    font-size: $xxx-large;
+    text-transform: uppercase;
+    line-height: 3rem;
+    font-family: $old-standard;
+    @media (max-width: $tablet) {
+      font-size: $xx-large;
+    }
+  }
+
+  &__paragraph {
+    width: 50%;
+    color: $granite-gray;
+    @media (max-width: $tablet) {
+      width: 95%;
+    }
+  }
+
+  &__button {
+    margin-top: 1rem;
+    border: 1px solid $smoky-black;
+    padding: 0.5rem 1rem;
+    @media (max-width: $phone) {
+      font-size: $small;
+      padding: 0.2rem 0.5rem;
+    }
+    &:hover {
+      border: 1px solid $light-gray;
+    }
+    &:focus {
+      border: 1px solid $light-gray;
+      color: $granite-gray;
+    }
+  }
+}
+.newsletters {
+  display: grid;
+  grid-template-columns: 90% 10%;
+
+  &__box {
+    padding: 3rem;
+    background-color: $smoky-black;
+    height: 9rem;
+    color: $white;
+  }
+  &__title {
+    font-family: $old-standard;
+    font-weight: $font-bold;
+    font-size: $xx-large;
+    margin-bottom: 2rem;
+  }
+
+  &__text {
+    font-family: $old-standard;
+    font-weight: $font-regular;
+    font-size: $small;
+  }
+
+  &__email {
+    font-weight: $font-regular;
+    font-size: $small;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  &__subscribe {
+    height: 15rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-weight: $font-bold;
+  }
+
+  &__name {
+    transform: rotate(90deg);
+    font-size: $large;
+    font-weight: $font-bold;
+  }
+}
